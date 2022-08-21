@@ -7,7 +7,8 @@ const choices = [
     "add a department", 
     "add a role", 
     "add an employee",
-    "update an employee role"
+    "update an employee role",
+    "Quit"
 ];
 
 const questions = [
@@ -25,6 +26,9 @@ function askQuestion() {
     .then((data) => {
         const {choice} = data;
         console.log("You have selected the choice: " + choice);
+        if (choice != 'Quit') {
+            askQuestion();
+        }
     });
 }
 
